@@ -1,0 +1,17 @@
+<script>
+
+window.addEventListener('focus', function(event) {
+	document.getElementById('element').innerHTML = 'focus'
+}, false)
+
+window.addEventListener('blur', function(event) {
+	document.getElementById('element').innerHTML = 'blur'
+}, false)
+
+</script>
+
+
+
+<div id='element'>
+default
+</div>
