@@ -1,0 +1,140 @@
+{
+	"2D arrays": [
+		"2018/A/05:Klara",
+		"2018/A/10:Stelios",
+		"2018/B/08:Luann",
+		"2018/B/11:Nikita",
+		"2018/D/05:Diya",
+		"2018/D/07:Jeremy",
+		"2018/R/05:Emily"
+	],
+	"base conversion": [
+		"2018/A/08:Polina",
+		"2018/A/11:Vicente",
+		"2018/D/08:Kinga"
+	],
+	"big decimal": [
+		"2018/B/07:Judith"
+	],
+	"bitwise": [
+		"2018/A/11:Vicente"
+	],
+	"date/time": [
+		"2018/A/04:Isabel",
+		"2018/B/04:Dilbert",
+		"2018/D/11:Nandita",
+		"2018/R/11:Vincent"
+	],
+	"dynamic programming": [
+		"2018/A/07:Logan",
+		"2018/B/06:Fa",
+		"2018/B/10:Micaela",
+		"2018/B/12:Peter",
+		"2018/D/03:Candela",
+		"2018/R/12:William"
+	],
+	"flood fill": [
+		"2018/A/05:Klara",
+		"2018/D/07:Jeremy"
+	],
+	"formatting": [
+		"2018/A/02:Chaoxiang",
+		"2018/B/03:Constanza",
+		"2018/B/04:Dilbert",
+		"2018/B/05:Emily",
+		"2018/B/08:Luann",
+		"2018/B/11:Nikita",
+		"2018/D/02:Bayani",
+		"2018/D/03:Candela",
+		"2018/D/11:Nandita",
+		"2018/R/01:Ariana",
+		"2018/R/02:Bingwen",
+		"2018/R/03:Caleb",
+		"2018/R/07:Opus",
+		"2018/R/10:Samantha",
+		"2018/S/01:Ankur",
+		"2018/S/11:Richa",
+		"2018/S/12:Romero"
+	],
+	"graphs": [
+		"2018/A/10:Stelios",
+		"2018/B/11:Nikita",
+		"2018/S/04:Dinesh"
+	],
+	"maps": [
+		"2018/B/03:Constanza",
+		"2018/D/04:Carla",
+		"2018/D/06:Gleb",
+		"2018/D/10:Max",
+		"2018/R/08:Prashant",
+		"2018/S/06:Johnny",
+		"2018/S/11:Richa"
+	],
+	"math": [
+		"2018/A/02:Chaoxiang",
+		"2018/A/06:Linus",
+		"2018/B/05:Emily",
+		"2018/D/08:Kinga",
+		"2018/D/09:Layla",
+		"2018/D/12:Raymond",
+		"2018/R/02:Bingwen",
+		"2018/R/03:Caleb",
+		"2018/R/08:Prashant",
+		"2018/R/09:Ramya",
+		"2018/R/10:Samantha",
+		"2018/R/12:William",
+		"2018/S/07:Konstantinos",
+		"2018/S/11:Richa",
+		"2018/S/12:Romero"
+	],
+	"no input": [
+		"2018/A/01:Aaron",
+		"2018/B/01:Baldo",
+		"2018/D/01:Alice",
+		"2018/R/01:Ariana",
+		"2018/S/01:Ankur"
+	],
+	"patterns": [
+		"2018/A/09:Rocio",
+		"2018/D/05:Diya",
+		"2018/S/05:Emma"
+	],
+	"regex": [
+		"2018/A/03:Deshi",
+		"2018/R/06:Joe"
+	],
+	"roman numerals": [
+		"2018/S/09:Milo"
+	],
+	"sets": [
+		"2018/A/12:Wally"
+	],
+	"shortest path": [
+		"2018/S/04:Dinesh"
+	],
+	"sorting": [
+		"2018/A/04:Isabel",
+		"2018/A/12:Wally",
+		"2018/B/04:Dilbert",
+		"2018/B/07:Judith",
+		"2018/R/06:Joe",
+		"2018/R/07:Opus"
+	],
+	"strings": [
+		"2018/A/03:Deshi",
+		"2018/A/08:Polina",
+		"2018/B/02:Barb",
+		"2018/B/08:Luann",
+		"2018/B/09:Lucy",
+		"2018/D/04:Carla",
+		"2018/R/04:Debra",
+		"2018/R/06:Joe",
+		"2018/S/02:Catalina",
+		"2018/S/03:Dennis",
+		"2018/S/08:Leonardo",
+		"2018/S/10:Oscar"
+	],
+	"stupid": [
+		"2018/R/09:Ramya"
+	]
+}
