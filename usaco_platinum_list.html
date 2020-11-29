@@ -1,0 +1,548 @@
+<!doctype html>
+<html style='font-size:12px !important'>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>h</title><link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none 0s ease 0s; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+svg[id^="mermaidChart"] { line-height: 1em; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border-top: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table tr th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr th:first-child,
+table tr td:first-child {
+    margin-top: 0;
+}
+table tr th:last-child,
+table tr td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+    --item-hover-bg-color: #E6F0FE;
+}
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+
+</style>
+</head>
+<body class='typora-export os-windows'>
+<div id='write'  class=''><h3><a name="2020-us-openhttpwwwusacoorgindexphppageopen20results-platinum" class="md-header-anchor"></a><a href='http://www.usaco.org/index.php?page=open20results'><span>2020 US Open</span></a><span> Platinum</span></h3><p><a href='http://www.usaco.org/current/data/sol_sprinklers2_platinum_open20.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=1044'><span>Sprinklers 2: Return of the Alfalfa</span></a></p><p><a href='http://www.usaco.org/current/data/sol_exercise_platinum_open20.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=1045'><span>Exercise</span></a></p><p><a href='http://www.usaco.org/current/data/sol_circus_platinum_open20.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=1046'><span>Circus</span></a></p><h3><a name="2020-februaryhttpwwwusacoorgindexphppagefeb20results-platinum" class="md-header-anchor"></a><a href='http://www.usaco.org/index.php?page=feb20results'><span>2020 February</span></a><span> Platinum</span></h3><p><a href='http://www.usaco.org/current/data/sol_deleg_platinum_feb20.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=1020'><span>Delegation</span></a></p><p><a href='http://www.usaco.org/current/data/sol_triangles_platinum_feb20.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=1021'><span>Equilateral Triangles</span></a></p><p><a href='http://www.usaco.org/current/data/sol_help_platinum_feb20.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=1022'><span>Help Yourself</span></a></p><h3><a name="2020-januaryhttpwwwusacoorgindexphppagejan20results-platinum" class="md-header-anchor"></a><a href='http://www.usaco.org/index.php?page=jan20results'><span>2020 January</span></a><span> Platinum</span></h3><p><a href='http://www.usaco.org/current/data/sol_cave_platinum_jan20.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=996'><span>Cave Paintings</span></a></p><p><a href='http://www.usaco.org/current/data/sol_nondec_platinum_jan20.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=997'><span>Non-Decreasing Subsequences</span></a></p><p><a href='http://www.usaco.org/current/data/sol_falling_platinum_jan20.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=998'><span>Falling Portals</span></a></p><h3><a name="2019-decemberhttpwwwusacoorgindexphppagedec19results-platinum" class="md-header-anchor"></a><a href='http://www.usaco.org/index.php?page=dec19results'><span>2019 December</span></a><span> Platinum</span></h3><p><a href='http://www.usaco.org/current/data/sol_pieaters_platinum_dec19.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=972'><span>Greedy Pie Eaters</span></a></p><p><a href='http://www.usaco.org/current/data/sol_snowcow_platinum_dec19.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=973'><span>Bessie&#39;s Snow Cow</span></a></p><p><a href='http://www.usaco.org/current/data/sol_treedepth_platinum_dec19.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=974'><span>Tree Depth</span></a></p><h3><a name="2019-us-openhttpwwwusacoorgindexphppageopen19results-platinum" class="md-header-anchor"></a><a href='http://www.usaco.org/index.php?page=open19results'><span>2019 US Open</span></a><span> Platinum</span></h3><p><a href='http://www.usaco.org/current/data/sol_boxes_platinum_open19.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=948'><span>Tree Boxes</span></a></p><p><a href='http://www.usaco.org/current/data/sol_escape_platinum_open19.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=949'><span>Compound Escape</span></a></p><p><a href='http://www.usaco.org/current/data/sol_valleys_platinum_open19.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=950'><span>Valleys</span></a></p><h3><a name="2019-februaryhttpwwwusacoorgindexphppagefeb19results-platinum" class="md-header-anchor"></a><a href='http://www.usaco.org/index.php?page=feb19results'><span>2019 February</span></a><span> Platinum</span></h3><p><a href='http://www.usaco.org/current/data/sol_cowdate_platinum_feb19.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=924'><span>Cow Dating</span></a></p><p><a href='http://www.usaco.org/current/data/sol_mooriokart_platinum_feb19.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=925'><span>Moorio Kart</span></a></p><p><a href='http://www.usaco.org/current/data/sol_mowing_platinum_feb19.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=926'><span>Mowing Mischief</span></a></p><h3><a name="2019-januaryhttpwwwusacoorgindexphppagejan19results-platinum" class="md-header-anchor"></a><a href='http://www.usaco.org/index.php?page=jan19results'><span>2019 January</span></a><span> Platinum</span></h3><p><a href='http://www.usaco.org/current/data/sol_redistricting_platinum_jan19.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=900'><span>Redistricting</span></a></p><p><a href='http://www.usaco.org/current/data/sol_exercise_platinum_jan19.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=901'><span>Exercise Route</span></a></p><p><a href='http://www.usaco.org/current/data/sol_tracking2_platinum_jan19.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=902'><span>Train Tracking 2</span></a></p><h3><a name="2018-decemberhttpwwwusacoorgindexphppagedec18results-platinum" class="md-header-anchor"></a><a href='http://www.usaco.org/index.php?page=dec18results'><span>2018 December</span></a><span> Platinum</span></h3><p><a href='http://www.usaco.org/current/data/sol_balance_platinum_dec18.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=864'><span>Balance Beam</span></a></p><p><a href='http://www.usaco.org/current/data/sol_itout_platinum_dec18.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=865'><span>Sort It Out</span></a></p><p><a href='http://www.usaco.org/current/data/sol_gathering_platinum_dec18.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=866'><span>The Cow Gathering</span></a></p><h3><a name="2018-us-openhttpwwwusacoorgindexphppageopen18results-platinum" class="md-header-anchor"></a><a href='http://www.usaco.org/index.php?page=open18results'><span>2018 US Open</span></a><span> Platinum</span></h3><p><a href='http://www.usaco.org/current/data/sol_sort_platinum_open18.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=840'><span>Out of Sorts</span></a></p><p><a href='http://www.usaco.org/current/data/sol_train_platinum_open18.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=841'><span>Train Tracking</span></a></p><p><a href='http://www.usaco.org/current/data/sol_disrupt_platinum_open18.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=842'><span>Disruption</span></a></p><h3><a name="2018-februaryhttpwwwusacoorgindexphppagefeb18results-platinum" class="md-header-anchor"></a><a href='http://www.usaco.org/index.php?page=feb18results'><span>2018 February</span></a><span> Platinum</span></h3><p><a href='http://www.usaco.org/current/data/sol_slingshot_platinum_feb18.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=816'><span>Slingshot</span></a></p><p><a href='http://www.usaco.org/current/data/sol_newbarn_platinum_feb18.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=817'><span>New Barns</span></a></p><p><a href='http://www.usaco.org/current/data/sol_gymnasts_platinum_feb18.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=818'><span>Cow Gymnasts</span></a></p><h3><a name="2018-januaryhttpwwwusacoorgindexphppagejan18results-platinum" class="md-header-anchor"></a><a href='http://www.usaco.org/index.php?page=jan18results'><span>2018 January</span></a><span> Platinum</span></h3><p><a href='http://www.usaco.org/current/data/sol_lifeguards_platinum_jan18.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=792'><span>Lifeguards</span></a></p><p><a href='http://www.usaco.org/current/data/sol_atlarge_platinum_jan18.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=793'><span>Cow at Large</span></a></p><p><a href='http://www.usaco.org/current/data/sol_sprinklers_platinum_jan18.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=794'><span>Sprinklers</span></a></p><h3><a name="2017-decemberhttpwwwusacoorgindexphppagedec17results-platinum" class="md-header-anchor"></a><a href='http://www.usaco.org/index.php?page=dec17results'><span>2017 December</span></a><span> Platinum</span></h3><p><a href='http://www.usaco.org/current/data/sol_standingout_platinum_dec17.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=768'><span>Standing Out from the Herd</span></a></p><p><a href='http://www.usaco.org/current/data/sol_pushabox_platinum_dec17.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=769'><span>Push a Box</span></a></p><p><a href='http://www.usaco.org/current/data/sol_greedy_platinum_dec17.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=770'><span>Greedy Gift Takers</span></a></p><h3><a name="2017-us-openhttpwwwusacoorgindexphppageopen17results-platinum" class="md-header-anchor"></a><a href='http://www.usaco.org/index.php?page=open17results'><span>2017 US Open</span></a><span> Platinum</span></h3><p><a href='http://www.usaco.org/current/data/sol_art_platinum_open17.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=744'><span>Modern Art</span></a></p><p><a href='http://www.usaco.org/current/data/sol_grass_platinum_open17.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=745'><span>Switch Grass</span></a></p><p><a href='http://www.usaco.org/current/data/sol_cowbasic_platinum_open17.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=746'><span>COWBASIC</span></a></p><h3><a name="2017-februaryhttpwwwusacoorgindexphppagefeb17results-platinum" class="md-header-anchor"></a><a href='http://www.usaco.org/index.php?page=feb17results'><span>2017 February</span></a><span> Platinum</span></h3><p><a href='http://www.usaco.org/current/data/sol_mincross_platinum_feb17.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=720'><span>Why Did the Cow Cross the Road</span></a></p><p><a href='http://www.usaco.org/current/data/sol_nocross_platinum_feb17.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=721'><span>Why Did the Cow Cross the Road II</span></a></p><p><a href='http://www.usaco.org/current/data/sol_friendcross_platinum_feb17.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=722'><span>Why Did the Cow Cross the Road III</span></a></p><h3><a name="2017-januaryhttpwwwusacoorgindexphppagejan17results-platinum" class="md-header-anchor"></a><a href='http://www.usaco.org/index.php?page=jan17results'><span>2017 January</span></a><span> Platinum</span></h3><p><a href='http://www.usaco.org/current/data/sol_promote_platinum_jan17.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=696'><span>Promotion Counting</span></a></p><p><a href='http://www.usaco.org/current/data/sol_tallbarn_platinum_jan17.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=697'><span>Building a Tall Barn</span></a></p><p><a href='http://www.usaco.org/current/data/sol_subrev_platinum_jan17.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=698'><span>Subsequence Reversal</span></a></p><h3><a name="2016-decemberhttpwwwusacoorgindexphppagedec16results-platinum" class="md-header-anchor"></a><a href='http://www.usaco.org/index.php?page=dec16results'><span>2016 December</span></a><span> Platinum</span></h3><p><a href='http://www.usaco.org/current/data/sol_triangles_platinum_dec16.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=672'><span>Lots of Triangles</span></a></p><p><a href='http://www.usaco.org/current/data/sol_team_platinum_dec16.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=673'><span>Team Building</span></a></p><p><a href='http://www.usaco.org/current/data/sol_roboherd_platinum_dec16.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=674'><span>Robotic Cow Herd</span></a></p><h3><a name="2016-us-openhttpwwwusacoorgindexphppageopen16results-platinum" class="md-header-anchor"></a><a href='http://www.usaco.org/index.php?page=open16results'><span>2016 US Open</span></a><span> Platinum</span></h3><p><a href='http://www.usaco.org/current/data/sol_262144_platinum_open16.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=648'><span>262144</span></a></p><p><a href='http://www.usaco.org/current/data/sol_bcs_platinum_open16.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=649'><span>Bull in a China Shop</span></a></p><p><a href='http://www.usaco.org/current/data/sol_landscape_platinum_open16.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=650'><span>Landscaping</span></a></p><h3><a name="2016-februaryhttpwwwusacoorgindexphppagefeb16results-platinum" class="md-header-anchor"></a><a href='http://www.usaco.org/index.php?page=feb16results'><span>2016 February</span></a><span> Platinum</span></h3><p><a href='http://www.usaco.org/current/data/sol_balancing_platinum_feb16.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=624'><span>Load Balancing</span></a></p><p><a href='http://www.usaco.org/current/data/sol_fencedin_platinum_feb16.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=625'><span>Fenced In</span></a></p><p><a href='http://www.usaco.org/current/data/sol_cbarn_platinum_feb16.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=626'><span>Circular Barn</span></a></p><h3><a name="2016-januaryhttpwwwusacoorgindexphppagejan16results-platinum" class="md-header-anchor"></a><a href='http://www.usaco.org/index.php?page=jan16results'><span>2016 January</span></a><span> Platinum</span></h3><p><a href='http://www.usaco.org/current/data/sol_fortmoo_platinum_jan16.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=600'><span>Fort Moo</span></a></p><p><a href='http://www.usaco.org/current/data/sol_mowing_platinum_jan16.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=601'><span>Mowing the Field</span></a></p><p><a href='http://www.usaco.org/current/data/sol_lightsout_platinum_jan16.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=602'><span>Lights Out</span></a></p><h3><a name="2015-decemberhttpwwwusacoorgindexphppagedec15results-platinum" class="md-header-anchor"></a><a href='http://www.usaco.org/index.php?page=dec15results'><span>2015 December</span></a><span> Platinum</span></h3><p><a href='http://www.usaco.org/current/data/sol_maxflow_platinum_dec15.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=576'><span>Max Flow</span></a></p><p><a href='http://www.usaco.org/current/data/sol_cardgame_platinum_dec15.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=577'><span>High Card Low Card (Platinum)</span></a></p><p><a href='http://www.usaco.org/current/data/sol_haybales_platinum_dec15.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=578'><span>Counting Haybales</span></a></p><h3><a name="2015-us-openhttpwwwusacoorgindexphppageopen15results-gold" class="md-header-anchor"></a><a href='http://www.usaco.org/index.php?page=open15results'><span>2015 US Open</span></a><span> Gold</span></h3><p><a href='http://www.usaco.org/current/data/sol_googol_gold.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=552'><span>Googol</span></a></p><p><a href='http://www.usaco.org/current/data/sol_palpath_gold.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=553'><span>Palindromic Paths</span></a></p><p><a href='http://www.usaco.org/current/data/sol_trapped_gold.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=554'><span>Trapped in the Haybales (Gold)</span></a></p><h3><a name="2015-februaryhttpwwwusacoorgindexphppagefeb15results-gold" class="md-header-anchor"></a><a href='http://www.usaco.org/index.php?page=feb15results'><span>2015 February</span></a><span> Gold</span></h3><p><a href='http://www.usaco.org/current/data/sol_hopscotch_gold.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=532'><span>Cow Hopscotch (Gold)</span></a></p><p><a href='http://www.usaco.org/current/data/sol_censor_gold.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=533'><span>Censoring (Gold)</span></a></p><p><a href='http://www.usaco.org/current/data/sol_fencing_gold.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=534'><span>Fencing the Herd</span></a></p><h3><a name="2015-januaryhttpwwwusacoorgindexphppagejan15results-gold" class="md-header-anchor"></a><a href='http://www.usaco.org/index.php?page=jan15results'><span>2015 January</span></a><span> Gold</span></h3><p><a href='http://www.usaco.org/current/data/sol_cowrect_gold.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=514'><span>Cow Rectangles</span></a></p><p><a href='http://www.usaco.org/current/data/sol_movie_gold.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=515'><span>Moovie Mooving</span></a></p><p><a href='http://www.usaco.org/current/data/sol_grass_gold.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=516'><span>Grass Cownoisseur</span></a></p><h3><a name="2014-decemberhttpwwwusacoorgindexphppagedec14results-gold" class="md-header-anchor"></a><a href='http://www.usaco.org/index.php?page=dec14results'><span>2014 December</span></a><span> Gold</span></h3><p><a href='http://www.usaco.org/current/data/sol_guard_gold.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=494'><span>Guard Mark</span></a></p><p><a href='http://www.usaco.org/current/data/sol_marathon_gold.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=495'><span>Marathon</span></a></p><p><a href='http://www.usaco.org/current/data/sol_cowjog_gold.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=496'><span>Cow Jog</span></a></p><h3><a name="2014-us-openhttpwwwusacoorgindexphppageopen14problems-gold" class="md-header-anchor"></a><a href='http://www.usaco.org/index.php?page=open14problems'><span>2014 US Open</span></a><span> Gold</span></h3><p><a href='http://www.usaco.org/current/data/sol_fairphoto_gold.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=436'><span>Fair Photography</span></a></p><p><a href='http://www.usaco.org/current/data/sol_optics.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=437'><span>Cow Optics</span></a></p><p><a href='http://www.usaco.org/current/data/sol_code.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=438'><span>Code Breaking</span></a></p><h3><a name="2014-februaryhttpwwwusacoorgindexphppagefeb14problems-gold" class="md-header-anchor"></a><a href='http://www.usaco.org/index.php?page=feb14problems'><span>2014 February</span></a><span> Gold</span></h3><p><a href='http://www.usaco.org/current/data/sol_rblock.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=400'><span>Roadblock</span></a></p><p><a href='http://www.usaco.org/current/data/sol_dec.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=401'><span>Cow Decathlon</span></a></p><p><a href='http://www.usaco.org/current/data/sol_boarding.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=402'><span>Airplane Boarding</span></a></p><h3><a name="2014-januaryhttpwwwusacoorgindexphppagejan14problems-gold" class="md-header-anchor"></a><a href='http://www.usaco.org/index.php?page=jan14problems'><span>2014 January</span></a><span> Gold</span></h3><p><a href='http://www.usaco.org/current/data/sol_curling.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=382'><span>Cow Curling</span></a></p><p><a href='http://www.usaco.org/current/data/sol_skicourse.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=383'><span>Building a Ski Course</span></a></p><p><a href='http://www.usaco.org/current/data/sol_skilevel.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=384'><span>Ski Course Rating</span></a></p><h3><a name="2013-decemberhttpwwwusacoorgindexphppagedec13problems-gold" class="md-header-anchor"></a><a href='http://www.usaco.org/index.php?page=dec13problems'><span>2013 December</span></a><span> Gold</span></h3><p><a href='http://www.usaco.org/current/data/sol_vacationgold.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=364'><span>Vacation Planning (gold)</span></a></p><p><a href='http://www.usaco.org/current/data/sol_optmilk.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=365'><span>Optimal Milking</span></a></p><p><a href='http://www.usaco.org/current/data/sol_shufflegold.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=366'><span>The Bessie Shuffle (gold)</span></a></p><h3><a name="2013-us-openhttpwwwusacoorgindexphppageopen13problems-gold" class="md-header-anchor"></a><a href='http://www.usaco.org/index.php?page=open13problems'><span>2013 US Open</span></a><span> Gold</span></h3><p><a href='http://www.usaco.org/current/data/sol_photo_open13_gold.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=285'><span>Photo</span></a></p><p><a href='http://www.usaco.org/current/data/sol_yinyang.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=286'><span>Yin and Yang</span></a></p><p><a href='http://www.usaco.org/current/data/sol_eight.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=287'><span>Figure Eight</span></a></p><h3><a name="2013-februaryhttpwwwusacoorgindexphppagefeb13problems-gold" class="md-header-anchor"></a><a href='http://www.usaco.org/index.php?page=feb13problems'><span>2013 February</span></a><span> Gold</span></h3><p><a href='http://www.usaco.org/current/data/sol_partition.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=247'><span>Partitioning the Farm</span></a></p><p><a href='http://www.usaco.org/current/data/sol_taxi.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=248'><span>Taxi</span></a></p><p><a href='http://www.usaco.org/current/data/sol_route.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=249'><span>Route Design</span></a></p><h3><a name="2013-januaryhttpwwwusacoorgindexphppagejan13problems-gold" class="md-header-anchor"></a><a href='http://www.usaco.org/index.php?page=jan13problems'><span>2013 January</span></a><span> Gold</span></h3><p><a href='http://www.usaco.org/current/data/sol_lineup_gold.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=229'><span>Cow Lineup</span></a></p><p><a href='http://www.usaco.org/current/data/sol_island.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=230'><span>Island Travels</span></a></p><p><a href='http://www.usaco.org/current/data/sol_seating.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=231'><span>Seating</span></a></p><h3><a name="2012-decemberhttpwwwusacoorgindexphppagedec12problems-gold" class="md-header-anchor"></a><a href='http://www.usaco.org/index.php?page=dec12problems'><span>2012 December</span></a><span> Gold</span></h3><p><a href='http://www.usaco.org/current/data/sol_gangs.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=211'><span>Gangs of Instanbull/Cowstantinople</span></a></p><p><a href='http://www.usaco.org/current/data/sol_first.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=212'><span>First!</span></a></p><p><a href='http://www.usaco.org/current/data/sol_runaway.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=213'><span>Running Away From the Barn</span></a></p><h3><a name="2012-us-openhttpwwwusacoorgindexphppageopen12problems-gold" class="md-header-anchor"></a><a href='http://www.usaco.org/index.php?page=open12problems'><span>2012 US Open</span></a><span> Gold</span></h3><p><a href='http://www.usaco.org/current/data/sol_tied.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=137'><span>Tied Down</span></a></p><p><a href='http://www.usaco.org/current/data/sol_bookshelf_gold.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=138'><span>Bookshelf</span></a></p><p><a href='http://www.usaco.org/current/data/sol_subsets.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=139'><span>Balanced Cow Subsets</span></a></p><h3><a name="2012-februaryhttpwwwusacoorgindexphppagefeb12problems-gold" class="md-header-anchor"></a><a href='http://www.usaco.org/index.php?page=feb12problems'><span>2012 February</span></a><span> Gold</span></h3><p><a href='http://www.usaco.org/current/data/sol_coupons.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=118'><span>Cow Coupons</span></a></p><p><a href='http://www.usaco.org/current/data/sol_symmetry.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=119'><span>Symmetry</span></a></p><p><a href='http://www.usaco.org/current/data/sol_nearcows.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=120'><span>Nearby Cows</span></a></p><h3><a name="2012-januaryhttpwwwusacoorgindexphppagejan12problems-gold" class="md-header-anchor"></a><a href='http://www.usaco.org/index.php?page=jan12problems'><span>2012 January</span></a><span> Gold</span></h3><p><a href='http://www.usaco.org/current/data/sol_combos.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=109'><span>Video Game</span></a></p><p><a href='http://www.usaco.org/current/data/sol_cowrun.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=110'><span>Cow Run</span></a></p><p><a href='http://www.usaco.org/current/data/sol_alliance.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=111'><span>Bovine Alliance</span></a></p><h3><a name="2011-decemberhttpwwwusacoorgindexphppagedec11problems-gold" class="md-header-anchor"></a><a href='http://www.usaco.org/index.php?page=dec11problems'><span>2011 December</span></a><span> Gold</span></h3><p><a href='http://www.usaco.org/current/data/sol_photo.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=100'><span>Cow Photography</span></a></p><p><a href='http://www.usaco.org/current/data/sol_simplify.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=101'><span>Simplifying the Farm</span></a></p><p><a href='http://www.usaco.org/current/data/sol_grassplant.html'><span>solution</span></a><span>	</span><a href='http://www.usaco.org/index.php?page=viewproblem2&amp;cpid=102'><span>Grass Planting</span></a></p></div>
+</body>
+</html>
