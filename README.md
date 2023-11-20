@@ -1,1 +1,1 @@
-[site](https://enpandi.github.io/repository/)
+[site](https://enpandi.github.io/hs-misc/)
